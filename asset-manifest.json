@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DS-Jay/interactive-resume.git/static/css/main.3b7b98c0.css",
+    "main.js": "/DS-Jay/interactive-resume.git/static/js/main.d1a6d165.js",
+    "static/js/453.79217831.chunk.js": "/DS-Jay/interactive-resume.git/static/js/453.79217831.chunk.js",
+    "index.html": "/DS-Jay/interactive-resume.git/index.html",
+    "main.3b7b98c0.css.map": "/DS-Jay/interactive-resume.git/static/css/main.3b7b98c0.css.map",
+    "main.d1a6d165.js.map": "/DS-Jay/interactive-resume.git/static/js/main.d1a6d165.js.map",
+    "453.79217831.chunk.js.map": "/DS-Jay/interactive-resume.git/static/js/453.79217831.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3b7b98c0.css",
+    "static/js/main.d1a6d165.js"
+  ]
+}

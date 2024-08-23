@@ -59,6 +59,67 @@ const App: React.FC = () => {
 
 export default App;
 
+// import React, { useState } from 'react';
+// import Sidebar from './components/Sidebar';
+// import Content from './components/Content';
+// import ResponsiveProjectDisplay from './components/ResponsiveProjectDisplay';
+// import PersonalDetails from './components/PersonalDetails';
+// import Education from './components/Education';
+// import TechnicalSkills from './components/TechnicalSkills';
+// import CertificationsAndLearning from './components/CertificationsAndLearning';
+
+// const App: React.FC = () => {
+//   const [selectedSection, setSelectedSection] = useState('personal');
+//   const [selectedProject, setSelectedProject] = useState('');
+
+//   const handleSectionChange = (section: string) => {
+//     setSelectedSection(section);
+//     if (section !== 'experience') {
+//       setSelectedProject('');
+//     }
+//   };
+
+//   const renderContent = () => {
+//     switch (selectedSection) {
+//       case 'personal':
+//         return <PersonalDetails />;
+//       case 'education':
+//         return <Education />;
+//       case 'technical':
+//         return <TechnicalSkills />;
+//       case 'certifications':
+//         return <CertificationsAndLearning />;
+//       case 'experience':
+//         return (
+//           <Content
+//             section={selectedSection}
+//             onProjectSelect={setSelectedProject}
+//             isDisplayOpen={!!selectedProject}
+//           />
+//         );
+//       default:
+//         return <div>Select a section from the sidebar</div>;
+//     }
+//   };
+
+//   return (
+//     <div className="flex flex-col md:flex-row h-screen overflow-hidden">
+//       <Sidebar onSelect={handleSectionChange} />
+//       <div className="flex-grow overflow-y-auto">
+//         {renderContent()}
+//       </div>
+//       {selectedProject && (
+//         <ResponsiveProjectDisplay 
+//           project={selectedProject} 
+//           onClose={() => setSelectedProject('')}
+//         />
+//       )}
+//     </div>
+//   );
+// };
+
+// export default App;
+
 // // src/App.tsx
 // import React, { useState } from 'react';
 // import Sidebar from './components/Sidebar';

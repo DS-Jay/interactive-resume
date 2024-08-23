@@ -55,7 +55,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onSelect }) => {
           ))}
         </ul>
         <div className="mt-4 flex flex-col items-center space-y-4 p-4">
-          <a
+          {/* <a
             href="/James Hill Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -63,7 +63,18 @@ const Sidebar: React.FC<SidebarProps> = ({ onSelect }) => {
           >
             <ExternalLink size={20} />
             <span>View Resume</span>
+          </a> */}
+          <a
+            href={`${process.env.PUBLIC_URL}/James Hill Resume.pdf`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-2 bg-white text-[#254879] px-4 py-2 rounded hover:bg-gray-200 transition-colors duration-200"
+          >
+            <ExternalLink size={20} />
+            <span>View Resume</span>
           </a>
+
+
           <div className="flex justify-center space-x-4">
             <a
               href="https://www.linkedin.com/in/james-hill-0a437326/"

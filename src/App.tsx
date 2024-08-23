@@ -33,7 +33,8 @@ const App: React.FC = () => {
           <Content
             section={selectedSection}
             onProjectSelect={setSelectedProject}
-            isDisplayOpen={!!selectedProject}
+            isDisplayOpen={false}  // Remove the influence of this prop
+            // isDisplayOpen={!!selectedProject}
           />
         );
       default:

@@ -1,26 +1,198 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// src/App.tsx
+import React, { useState } from 'react';
+import Sidebar from './components/Sidebar';
+import Content from './components/Content';
+import Display from './components/Display';
+import PersonalDetails from './components/PersonalDetails';
+import Education from './components/Education';
+import TechnicalSkills from './components/TechnicalSkills';
+import CertificationsAndLearning from './components/CertificationsAndLearning';
+// import './index.css';
+// import './App.css';
 
-function App() {
+const App: React.FC = () => {
+  const [selectedSection, setSelectedSection] = useState('personal');
+  const [selectedProject, setSelectedProject] = useState('');
+
+  const handleSectionChange = (section: string) => {
+    setSelectedSection(section);
+    if (section !== 'experience') {
+      setSelectedProject('');
+    }
+  };
+
+  const renderContent = () => {
+    switch (selectedSection) {
+      case 'personal':
+        return <PersonalDetails />;
+      case 'education':
+        return <Education />;
+      case 'technical':
+        return <TechnicalSkills />;
+      case 'certifications':
+        return <CertificationsAndLearning />;
+      case 'experience':
+        return (
+          <Content
+            section={selectedSection}
+            onProjectSelect={setSelectedProject}
+            isDisplayOpen={!!selectedProject}
+          />
+        );
+      default:
+        return <div>Select a section from the sidebar</div>;
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex h-screen overflow-hidden">
+      <Sidebar onSelect={handleSectionChange} />
+      <div className="flex-grow flex overflow-hidden">
+        {renderContent()}
+        {selectedSection === 'experience' && selectedProject && <Display project={selectedProject} />}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
+
+// // src/App.tsx
+// import React, { useState } from 'react';
+// import Sidebar from './components/Sidebar';
+// import Content from './components/Content';
+// import Display from './components/Display';
+// import PersonalDetails from './components/PersonalDetails';
+// import './index.css';
+
+// const App: React.FC = () => {
+//   const [selectedSection, setSelectedSection] = useState('personal');
+//   const [selectedProject, setSelectedProject] = useState('');
+
+//   return (
+//     <div className="flex h-screen overflow-hidden">
+//       <Sidebar onSelect={setSelectedSection} />
+//       <div className="flex-grow flex overflow-hidden">
+//         {selectedSection === 'personal' ? (
+//           <PersonalDetails />
+//         ) : (
+//           <Content
+//             section={selectedSection}
+//             onProjectSelect={setSelectedProject}
+//             isDisplayOpen={!!selectedProject}
+//           />
+//         )}
+//         {selectedProject && <Display project={selectedProject} />}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+// // src/App.tsx
+// import React, { useState } from 'react';
+// import Sidebar from './components/Sidebar';
+// import Content from './components/Content';
+// import Display from './components/Display';
+// import PersonalDetails from './components/PersonalDetails';
+// import './index.css';
+
+// const App: React.FC = () => {
+//   const [selectedSection, setSelectedSection] = useState('personal');
+//   // const [selectedSection, setSelectedSection] = useState('experience');
+//   const [selectedProject, setSelectedProject] = useState('');
+
+//   return (
+//     <div className="flex h-screen overflow-hidden">
+//       <Sidebar onSelect={setSelectedSection} />
+//       <div className="flex flex-grow overflow-hidden">
+//         <Content
+//           section={selectedSection}
+//           onProjectSelect={setSelectedProject}
+//           isDisplayOpen={!!selectedProject}
+//         />
+//         {selectedProject && <Display project={selectedProject} />}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+// // src/App.tsx
+// import React, { useState } from 'react';
+// import Sidebar from './components/Sidebar';
+// import Content from './components/Content';
+// import Display from './components/Display';
+// import './index.css';
+
+// const App: React.FC = () => {
+//   const [selectedSection, setSelectedSection] = useState('experience');
+//   const [selectedProject, setSelectedProject] = useState('');
+
+//   return (
+//     <div className="flex h-screen overflow-hidden">
+//       <Sidebar onSelect={setSelectedSection} />
+//       <div className="flex-grow flex overflow-hidden">
+//         <div className="flex-grow overflow-y-auto">
+//           <Content section={selectedSection} onProjectSelect={setSelectedProject} />
+//         </div>
+//         {selectedProject && <Display project={selectedProject} />}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+// // src/App.tsx
+// import React, { useState } from 'react';
+// import Sidebar from './components/Sidebar';
+// import Content from './components/Content';
+// import Display from './components/Display';
+// import './index.css'; // Ensure TailwindCSS is imported
+
+// const App: React.FC = () => {
+//   const [selectedSection, setSelectedSection] = useState('experience');
+//   const [selectedProject, setSelectedProject] = useState('');
+
+//   return (
+//     <div className="flex h-screen">
+//       <Sidebar onSelect={setSelectedSection} />
+//       <div className="flex-grow flex">
+//         <Content section={selectedSection} onProjectSelect={setSelectedProject} />
+//         {/* Conditionally render the Display component only if a project is selected */}
+//         {selectedProject && <Display project={selectedProject} />}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+// // src/App.tsx
+// import React, { useState } from 'react';
+// import Sidebar from './components/Sidebar';
+// import Content from './components/Content';
+// import Display from './components/Display';
+// import './styles.css';
+
+// const App: React.FC = () => {
+//   const [selectedSection, setSelectedSection] = useState('experience');
+//   const [selectedProject, setSelectedProject] = useState('');
+
+//   return (
+//     <div className="app">
+//       <Sidebar onSelect={setSelectedSection} />
+//       <Content section={selectedSection} onProjectSelect={setSelectedProject} />
+//       <Display project={selectedProject} />
+//     </div>
+//   );
+// };
+
+// export default App;
+
